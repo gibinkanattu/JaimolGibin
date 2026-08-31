@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Gibin Biju</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <style>
+          html{ scroll-behavior: smooth; }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 12px;
+            max-width:760px;
+            margin: 0 auto;
+        }
+
+        .photo {
+            height: 760px;
+            padding: 4px;
+            border: 1px solid #c8a35b;
+            overflow: hidden;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap');
+
+        :root {
+            --navy: #071a32;
+            --navy-light: #0b2342;
+            --gold: #c8a35b;
+            --gold-light: #e3c981;
+            --white: #f8f5ed;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at center, rgba(25, 53, 82, .35), transparent 55%),
+                var(--navy);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        section.main {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section.step {
+            padding: 60px 20px;
+        }
+
+        /* Main invitation */
+        .wedding-card {
+            position: relative;
+            width: min(92vw, 760px);
+            min-height: 920px;
+            padding: 105px 55px 80px;
+            overflow: hidden;
+            text-align: center;
+            background:
+                radial-gradient(circle at 50% 45%, rgba(255, 255, 255, .025), transparent 45%),
+                linear-gradient(145deg, #07182e, #091d36 55%, #06162a);
+            border: 1px solid rgba(200, 163, 91, .55);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+        }
+
+        /* Elegant oval from the reference invitation */
+        .wedding-card::before {
+            content: "";
+            position: absolute;
+            left: 9%;
+            right: 9%;
+            top: 8%;
+            bottom: 8%;
+            border: 1.5px solid var(--gold);
+            border-radius: 50% 48% 51% 49% / 48% 52% 48% 52%;
+            pointer-events: none;
+        }
+
+        /* Fine inner glow */
+        .wedding-card::after {
+            content: "";
+            position: absolute;
+            inset: 3%;
+            border: 1px solid rgba(200, 163, 91, .12);
+            pointer-events: none;
+        }
+
+        /* Corner botanical artwork */
+        .botanical {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            pointer-events: none;
+            opacity: .95;
+        }
+
+        .top-left {
+            top: -12px;
+            left: -12px;
+        }
+
+        .bottom-right {
+            right: -12px;
+            bottom: -12px;
+            transform: rotate(180deg);
+        }
+
+        .flower {
+            position: absolute;
+            width: 78px;
+            height: 78px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50% 10% 50% 10%;
+            transform: rotate(25deg);
+        }
+
+        .flower::before,
+        .flower::after {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid var(--gold);
+            border-radius: 50% 10% 50% 10%;
+        }
+
+        .flower::after {
+            transform: rotate(72deg);
+        }
+
+        .flower.center {
+            top: 32px;
+            left: 40px;
+            transform: rotate(0deg);
+        }
+
+        .flower.small {
+            width: 55px;
+            height: 55px;
+            top: 105px;
+            left: 145px;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 48px;
+            height: 22px;
+            border: 1px solid var(--gold);
+            border-radius: 100% 0 100% 0;
+            transform: rotate(-28deg);
+        }
+
+        .leaf.l1 {
+            top: 35px;
+            left: 135px;
+        }
+
+        .leaf.l2 {
+            top: 65px;
+            left: 185px;
+            transform: rotate(22deg);
+        }
+
+        .leaf.l3 {
+            top: 120px;
+            left: 70px;
+            transform: rotate(150deg);
+        }
+
+        .leaf.l4 {
+            top: 155px;
+            left: 115px;
+            transform: rotate(18deg);
+        }
+
+        .leaf.l5 {
+            top: 180px;
+            left: 175px;
+            transform: rotate(-25deg);
+        }
+
+        .stem {
+            position: absolute;
+            width: 150px;
+            height: 1px;
+            background: var(--gold);
+            transform-origin: left center;
+            opacity: .9;
+        }
+
+        .stem.s1 {
+            top: 90px;
+            left: 75px;
+            transform: rotate(-22deg);
+        }
+
+        .stem.s2 {
+            top: 175px;
+            left: 20px;
+            transform: rotate(-65deg);
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 5;
+        }
+
+        .kicker {
+            color: var(--gold-light);
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .names {
+            margin: 0;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(48px, 7vw, 76px);
+            font-weight: 300;
+            line-height: .95;
+            color: var(--white);
+            text-shadow: 0 2px 15px rgba(0, 0, 0, .35);
+        }
+
+        .names .amp {
+            color: var(--gold-light);
+            font-size: .65em;
+            margin: 0 8px;
+        }
+
+        .subtitle {
+            margin: 28px auto 8px;
+            max-width: 450px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            line-height: 1.35;
+            color: #eee8d8;
+        }
+
+        .date {
+            margin: 35px 0 35px;
+            font-family: 'Cormorant Garamond', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            color: var(--gold-light);
+        }
+
+        .date .month {
+            font-size: 22px;
+            letter-spacing: 5px;
+        }
+
+        .date .day {
+            font-size: 72px;
+            line-height: .8;
+            color: var(--white);
+        }
+
+        .date .year {
+            font-size: 22px;
+            letter-spacing: 3px;
+        }
+
+        .date-line {
+            height: 1px;
+            width: 70px;
+            background: var(--gold);
+        }
+
+        /* Countdown */
+        .countdown-title {
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 30px 0 16px;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .time-box {
+            padding: 13px 5px;
+            border-top: 1px solid rgba(200, 163, 91, .55);
+            border-bottom: 1px solid rgba(200, 163, 91, .55);
+        }
+
+        .time-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(34px, 6vw, 52px);
+            line-height: 1;
+            color: var(--white);
+        }
+
+        .time-label {
+            margin-top: 5px;
+            color: var(--gold-light);
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .event-info {
+            margin-top: 42px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #e8e1d0;
+        }
+
+        .event-info strong {
+            display: block;
+            color: var(--gold-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .reached {
+            display: none;
+            margin-top: 20px;
+            color: var(--gold-light);
+            font-family: 'Great Vibes', cursive;
+            font-size: 34px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .wedding-card {
+                min-height: 100vh;
+                width: 100%;
+                border: none;
+                padding: 90px 24px 60px;
+            }
+
+            .wedding-card::before {
+                left: 5%;
+                right: 5%;
+                top: 5%;
+                bottom: 5%;
+            }
+
+            .botanical {
+                transform: scale(.65);
+                transform-origin: top left;
+            }
+
+            .bottom-right {
+                transform: rotate(180deg) scale(.65);
+                transform-origin: bottom right;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .date {
+                gap: 9px;
+            }
+
+            .date .day {
+                font-size: 58px;
+            }
+
+            .date-line {
+                width: 35px;
+            }
+
+            .countdown {
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div class="wedding-card">
+
+            <!-- Decorative botanical corner -->
+            <div class="botanical top-left">
+                <div class="flower center"></div>
+                <div class="flower small"></div>
+                <div class="leaf l1"></div>
+                <div class="leaf l2"></div>
+                <div class="leaf l3"></div>
+                <div class="leaf l4"></div>
+                <div class="leaf l5"></div>
+                <div class="stem s1"></div>
+                <div class="stem s2"></div>
+            </div>
+            </br></br></br></br>
+            <div class="botanical bottom-right">
+                <div class="flower center"></div>
+                <div class="flower small"></div>
+                <div class="leaf l1"></div>
+                <div class="leaf l2"></div>
+                <div class="leaf l3"></div>
+                <div class="leaf l4"></div>
+                <div class="leaf l5"></div>
+                <div class="stem s1"></div>
+                <div class="stem s2"></div>
+            </div>
+
+            <main class="content">
+                <br>
+                <div class="kicker">Together with our families</div>
+                <br>
+                <h1 class="names">
+                    Gibin <span class="amp">&amp;</span> Jaimol
+                </h1>
+
+                <div class="subtitle">
+                    Invite you to celebrate<br>
+                    the joy of our wedding day
+                </div>
+
+                <div class="date">
+                    <span class="month">September</span>
+                    <span class="date-line"></span>
+                    <span class="day">12</span>
+                    <span class="date-line"></span>
+                    <span class="year">2026</span>
+                </div>
+
+                <div class="countdown-title">Counting down to our special day</div>
+
+                <div class="countdown">
+                    <div class="time-box">
+                        <div class="time-value" id="days">00</div>
+                        <div class="time-label">Days</div>
+                    </div>
+
+                    <div class="time-box">
+                        <div class="time-value" id="hours">00</div>
+                        <div class="time-label">Hours</div>
+                    </div>
+
+                    <div class="time-box">
+                        <div class="time-value" id="minutes">00</div>
+                        <div class="time-label">Minutes</div>
+                    </div>
+
+                    <div class="time-box">
+                        <div class="time-value" id="seconds">00</div>
+                        <div class="time-label">Seconds</div>
+                    </div>
+                </div>
+
+                <div class="reached" id="reached">
+                    The wait is over. ❤️
+                </div>
+
+                <div class="event-info">
+                    <a class="location-link" target="_blank" rel="noopener noreferrer"
+                        href="https://maps.app.goo.gl/aWgdXx1SpcYUKqZ87"><strong>Kuravilangad Church</strong></a>
+
+                    <br>
+                    <a class="location-link" target="_blank" rel="noopener noreferrer"
+                        href="https://maps.app.goo.gl/dCeGERzPv9LhSRzb7"><strong>Reception Venue</strong></a>
+                </div>
+
+            </main>
+        </div>
+
+        <script>
+            const targetDate = new Date("2026-09-12T11:00:00");
+
+            function updateCountdown() {
+                const now = new Date();
+                let remaining = targetDate.getTime() - now.getTime();
+
+                if (remaining <= 0) {
+                    remaining = 0;
+                    document.getElementById("reached").style.display = "block";
+                }
+
+                const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((remaining / (1000 * 60)) % 60);
+                const seconds = Math.floor((remaining / 1000) % 60);
+
+                document.getElementById("days").textContent =
+                    String(days).padStart(2, "0");
+
+                document.getElementById("hours").textContent =
+                    String(hours).padStart(2, "0");
+
+                document.getElementById("minutes").textContent =
+                    String(minutes).padStart(2, "0");
+
+                document.getElementById("seconds").textContent =
+                    String(seconds).padStart(2, "0");
+            }
+
+            updateCountdown();
+
+            const timer = setInterval(() => {
+                updateCountdown();
+
+                if (new Date() >= targetDate) {
+                    clearInterval(timer);
+                }
+            }, 1000);
+        </script>
+    </section>
+    <section>
+            <div class="gallery">
+
+        <div class="photo">
+            <img src="images/1.jpeg" alt="Wedding photo 1">
+        </div>
+
+        <div class="photo">
+            <img src="images/2.jpeg" alt="Wedding photo 2">
+        </div>
+
+        <div class="photo">
+            <img src="images/3.jpeg" alt="Wedding photo 3">
+        </div>
+
+        <div class="photo">
+            <img src="images/4.jpeg" alt="Wedding photo 4">
+        </div>
+
+        </div>
+    </section>
+</body>
+
+
+</html>

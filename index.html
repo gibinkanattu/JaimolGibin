@@ -377,8 +377,8 @@
             }
 
             .wedding-card::before {
-                left: 5%;
-                right: 5%;
+                left: 7%;
+                right: 7%;
                 top: 5%;
                 bottom: 5%;
             }
@@ -430,20 +430,25 @@
             }
 
             .countdown {
-                gap: 4px;
-                width: 100%;
+                width: 82%;
+                max-width: 360px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 3px;
             }
 
             .time-box {
-                padding: 10px 3px;
+                min-width: 0;
+                padding: 10px 2px;
             }
 
             .time-value {
-                font-size: clamp(28px, 9vw, 42px);
+                font-size: clamp(25px, 8vw, 38px);
             }
 
             .time-label {
-                font-size: 8px;
+                font-size: 7px;
                 letter-spacing: 1px;
             }
 
